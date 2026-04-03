@@ -1,0 +1,352 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SimSun', serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    background-image: url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=chinese%20ancient%20style%20paper%20texture%20background&image_size=square_hd');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* 页面顶部 */
+.header {
+    background-color: rgba(221, 188, 153, 0.8);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 3px solid #8B4513;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 3rem;
+    color: #8B4513;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #5D4037;
+}
+
+/* 导航栏 */
+.nav {
+    background-color: rgba(139, 69, 19, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 通用 section 样式 */
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #8B4513;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #D2B48C;
+}
+
+/* 首页 */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    color: #8B4513;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #5D4037;
+    margin-bottom: 15px;
+}
+
+/* 个人介绍 */
+.about-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* 专业技能 */
+.skills-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.skill-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item h3 {
+    font-size: 1.3rem;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 15px;
+    background-color: #D2B48C;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.skill-progress {
+    height: 100%;
+    background-color: #8B4513;
+    border-radius: 10px;
+    transition: width 1.5s ease;
+}
+
+.skill-item p {
+    font-size: 1rem;
+    color: #5D4037;
+}
+
+/* 获奖经历 */
+.awards-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.award-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.award-item:hover {
+    transform: translateY(-5px);
+}
+
+.award-item h3 {
+    font-size: 1.3rem;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+.award-item p {
+    font-size: 1rem;
+    color: #5D4037;
+}
+
+/* 学习情况 */
+.education-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.education-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.education-item h3 {
+    font-size: 1.3rem;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+.education-item p {
+    font-size: 1rem;
+    color: #5D4037;
+    margin-bottom: 10px;
+}
+
+.education-item ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.education-item li {
+    font-size: 1rem;
+    color: #5D4037;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.education-item li::before {
+    content: "•";
+    color: #8B4513;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* 兴趣爱好 */
+.hobbies-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.hobby-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hobby-item:hover {
+    transform: translateY(-5px);
+}
+
+.hobby-item h3 {
+    font-size: 1.3rem;
+    color: #8B4513;
+    margin-bottom: 15px;
+}
+
+.hobby-item p {
+    font-size: 1rem;
+    color: #5D4037;
+}
+
+/* 页脚 */
+.footer {
+    background-color: rgba(139, 69, 19, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    border-top: 3px solid #D2B48C;
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list li {
+        margin: 5px 0;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 40px 0;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
