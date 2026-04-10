@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python基础课程 - 陈同学个人主页</title>
+    <title>Python基础课程 - 学习站点</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,30 +11,76 @@
     <header class="header">
         <div class="header-content">
             <h1 class="title">Python基础课程</h1>
-            <p class="subtitle">Python基础语法学习</p>
+            <p class="subtitle">Python编程入门学习站点</p>
         </div>
     </header>
 
     <!-- 导航栏 -->
     <nav class="nav">
         <ul class="nav-list">
-            <li><a href="index.html#home">首页</a></li>
-            <li><a href="index.html#about">个人介绍</a></li>
-            <li><a href="index.html#skills">专业技能</a></li>
-            <li><a href="index.html#awards">获奖经历</a></li>
-            <li><a href="index.html#education">学习情况</a></li>
-            <li><a href="index.html#hobbies">兴趣爱好</a></li>
-            <li><a href="python-course.html">Python课程</a></li>
+            <li><a href="python-course.html#home">首页</a></li>
+            <li><a href="python-course.html#overview">课程概览</a></li>
+            <li><a href="python-course.html#basics">基础语法</a></li>
+            <li><a href="python-course.html#practice">练习题库</a></li>
+            <li><a href="python-course.html#resources">学习资源</a></li>
+            <li><a href="python-course.html#about">关于课程</a></li>
         </ul>
     </nav>
 
-    <!-- Python基础语法 -->
-    <section class="section">
+    <!-- 首页 -->
+    <section id="home" class="section">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>欢迎来到Python基础课程学习站点</h2>
+                    <p>本站点旨在帮助初学者快速掌握Python编程语言的基础知识，为后续的数据分析和应用开发打下坚实的基础。</p>
+                    <p>通过系统化的学习路径，您将逐步掌握Python的核心概念和编程技巧。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程概览 -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">课程概览</h2>
+            <div class="about-content">
+                <p>Python基础课程包含以下核心模块：</p>
+                <div class="hobbies-content" style="margin-top: 30px;">
+                    <div class="hobby-item">
+                        <h3>模块一：Python环境搭建</h3>
+                        <p>学习如何安装和配置Python开发环境，包括IDE的选择和使用。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>模块二：基础语法</h3>
+                        <p>掌握Python的基本语法规则，包括变量、数据类型、运算符等。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>模块三：控制流</h3>
+                        <p>学习条件语句和循环结构，实现程序的逻辑控制。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>模块四：函数</h3>
+                        <p>理解函数的定义和使用，提高代码的复用性。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>模块五：数据结构</h3>
+                        <p>掌握列表、字典等常用数据结构的使用方法。</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>模块六：实际应用</h3>
+                        <p>通过实际项目练习，巩固所学知识。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 基础语法 -->
+    <section id="basics" class="section">
         <div class="container">
             <h2 class="section-title">Python基础语法</h2>
             <div class="about-content">
-                <p>欢迎来到Python基础语法学习页面！本页面将为您介绍Python编程语言的基本语法知识，帮助您快速入门Python编程。</p>
-                
                 <div class="hobbies-content" style="margin-top: 40px;">
                     <!-- 变量和数据类型 -->
                     <div class="hobby-item">
@@ -150,14 +196,109 @@
                         </ul>
                     </div>
                 </div>
-                
-                <div style="margin-top: 40px; padding: 20px; background-color: rgba(221, 188, 153, 0.2); border-radius: 10px;">
-                    <h3>学习建议</h3>
-                    <p>1. 多动手练习，编写简单的Python程序</p>
-                    <p>2. 理解基本概念后，尝试解决实际问题</p>
-                    <p>3. 参考Python官方文档和教程</p>
-                    <p>4. 加入Python社区，与其他学习者交流</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 练习题库 -->
+    <section id="practice" class="section">
+        <div class="container">
+            <h2 class="section-title">练习题库</h2>
+            <div class="about-content">
+                <p>通过以下练习题，巩固所学的Python基础语法知识：</p>
+                <div class="hobbies-content" style="margin-top: 30px;">
+                    <div class="hobby-item">
+                        <h3>基础练习</h3>
+                        <ul style="list-style: none; margin-left: 20px;">
+                            <li style="position: relative; margin-bottom: 8px;">
+                                <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                                编写程序计算两个数的和
+                            </li>
+                            <li style="position: relative; margin-bottom: 8px;">
+                                <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                                将摄氏度转换为华氏度
+                            </li>
+                            <li style="position: relative; margin-bottom: 8px;">
+                                <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                                判断一个数是否为偶数
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>进阶练习</h3>
+                        <ul style="list-style: none; margin-left: 20px;">
+                            <li style="position: relative; margin-bottom: 8px;">
+                                <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                                计算1到100的和
+                            </li>
+                            <li style="position: relative; margin-bottom: 8px;">
+                                <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                                找出列表中的最大值
+                            </li>
+                            <li style="position: relative; margin-bottom: 8px;">
+                                <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                                反转字符串
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习资源 -->
+    <section id="resources" class="section">
+        <div class="container">
+            <h2 class="section-title">学习资源</h2>
+            <div class="about-content">
+                <p>推荐以下学习资源，帮助您更深入地学习Python：</p>
+                <div class="hobbies-content" style="margin-top: 30px;">
+                    <div class="hobby-item">
+                        <h3>官方文档</h3>
+                        <p>Python官方文档：<a href="https://docs.python.org/zh-cn/3/" target="_blank">https://docs.python.org/zh-cn/3/</a></p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>在线教程</h3>
+                        <p>Python官方教程</p>
+                        <p>菜鸟教程</p>
+                        <p>廖雪峰Python教程</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>开发工具</h3>
+                        <p>PyCharm</p>
+                        <p>VS Code</p>
+                        <p>Jupyter Notebook</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于课程 -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">关于课程</h2>
+            <div class="about-content">
+                <p>本Python基础课程专为初学者设计，旨在提供系统化的Python学习路径。通过本课程的学习，您将掌握Python的基本语法和编程思想，为后续的数据分析、Web开发等方向打下坚实的基础。</p>
+                <p>课程特点：</p>
+                <ul style="list-style: none; margin-left: 20px; margin-top: 20px;">
+                    <li style="position: relative; margin-bottom: 8px;">
+                        <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                        内容简洁明了，适合初学者
+                    </li>
+                    <li style="position: relative; margin-bottom: 8px;">
+                        <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                        理论与实践相结合
+                    </li>
+                    <li style="position: relative; margin-bottom: 8px;">
+                        <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                        提供丰富的练习和资源
+                    </li>
+                    <li style="position: relative; margin-bottom: 8px;">
+                        <span style="color: #8B4513; font-weight: bold; position: absolute; left: -15px;">•</span>
+                        保持与最新Python版本同步
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -165,7 +306,7 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 陈同学个人主页</p>
+            <p>© 2026 Python基础课程学习站点</p>
         </div>
     </footer>
 
