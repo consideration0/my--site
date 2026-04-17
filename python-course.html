@@ -5,8 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>面向商务数据分析与AI应用的Python高效学习大纲</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        .code-editor {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 400px;
+            max-width: 90vw;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #D2B48C;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        .code-header {
+            background: #8B4513;
+            color: white;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .code-content {
+            padding: 15px;
+        }
+        .code-editor.collapsed .code-content {
+            display: none;
+        }
+        .code-editor.collapsed {
+            height: auto;
+        }
+        py-script {
+            display: block;
+            width: 100%;
+            min-height: 200px;
+            border: 1px solid #D2B48C;
+            border-radius: 5px;
+            padding: 10px;
+            background: #f9f9f9;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        py-script output {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            border: 1px solid #D2B48C;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <!-- 代码编辑器组件 -->
+    <div class="code-editor" id="codeEditor">
+        <div class="code-header" onclick="toggleCodeEditor()">
+            <h3>Python代码运行器</h3>
+            <button class="toggle-btn" id="toggleBtn">▼</button>
+        </div>
+        <div class="code-content">
+            <p>在下面的编辑器中输入Python代码并运行：</p>
+            <py-script>
+# 示例代码：计算斐波那契数列
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# 打印前10个斐波那契数
+print("前10个斐波那契数：")
+for i in range(10):
+    print(f"fib({i}) = {fibonacci(i)}")
+
+# 示例：简单的数据处理
+import numpy as np
+import pandas as pd
+
+# 创建示例数据
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'age': [25, 30, 35, 40],
+    'salary': [50000, 60000, 70000, 80000]
+}
+
+# 创建DataFrame
+df = pd.DataFrame(data)
+print("\n示例数据：")
+print(df)
+
+# 计算平均薪资
+print("\n平均薪资：")
+print(df['salary'].mean())
+            </py-script>
+        </div>
+    </div>
+
     <!-- 页面顶部 -->
     <header class="header">
         <div class="header-content">
@@ -331,10 +439,24 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Python基础课程学习站点</p>
+            <p>© 2026 面向商务数据分析与AI应用的Python高效学习大纲</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        function toggleCodeEditor() {
+            const editor = document.getElementById('codeEditor');
+            const toggleBtn = document.getElementById('toggleBtn');
+            
+            editor.classList.toggle('collapsed');
+            
+            if (editor.classList.contains('collapsed')) {
+                toggleBtn.textContent = '▶';
+            } else {
+                toggleBtn.textContent = '▼';
+            }
+        }
+    </script>
 </body>
 </html>
