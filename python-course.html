@@ -74,7 +74,10 @@
     <div class="code-editor" id="codeEditor">
         <div class="code-header" onclick="toggleCodeEditor()">
             <h3>Python代码运行器</h3>
-            <button class="toggle-btn" id="toggleBtn">▼</button>
+            <div>
+                <button class="toggle-btn" id="toggleBtn">▼</button>
+                <button style="margin-left: 10px; background: #D2B48C; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-size: 12px;" onclick="resetCodeEditor(event)">重置代码</button>
+            </div>
         </div>
         <div class="code-content">
             <p>在下面的编辑器中输入Python代码并运行：</p>
@@ -445,6 +448,40 @@ print(df['salary'].mean())
 
     <script src="script.js"></script>
     <script>
+        // 保存初始示例代码
+        const initialCode = `# 示例代码：计算斐波那契数列
+
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# 打印前10个斐波那契数
+print("前10个斐波那契数：")
+for i in range(10):
+    print(f"fib({i}) = {fibonacci(i)}")
+
+# 示例：简单的数据处理
+import numpy as np
+import pandas as pd
+
+# 创建示例数据
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David'],
+    'age': [25, 30, 35, 40],
+    'salary': [50000, 60000, 70000, 80000]
+}
+
+# 创建DataFrame
+df = pd.DataFrame(data)
+print("\n示例数据：")
+print(df)
+
+# 计算平均薪资
+print("\n平均薪资：")
+print(df['salary'].mean())`;
+
         function toggleCodeEditor() {
             const editor = document.getElementById('codeEditor');
             const toggleBtn = document.getElementById('toggleBtn');
@@ -455,6 +492,18 @@ print(df['salary'].mean())
                 toggleBtn.textContent = '▶';
             } else {
                 toggleBtn.textContent = '▼';
+            }
+        }
+        
+        function resetCodeEditor(event) {
+            event.stopPropagation(); // 防止触发折叠/展开
+            const pyScript = document.querySelector('py-script');
+            if (pyScript) {
+                pyScript.textContent = initialCode;
+                // 重新运行代码
+                const pyScriptElement = document.createElement('py-script');
+                pyScriptElement.textContent = initialCode;
+                pyScript.parentNode.replaceChild(pyScriptElement, pyScript);
             }
         }
     </script>
