@@ -81,8 +81,7 @@
         </div>
         <div class="code-content">
             <p>在下面的编辑器中输入Python代码并运行：</p>
-            <py-script>
-# 示例代码：计算斐波那契数列
+            <textarea id="codeInput" style="width: 100%; min-height: 200px; padding: 10px; border: 1px solid #D2B48C; border-radius: 5px; background: #f9f9f9; font-family: 'Courier New', monospace; font-size: 14px; resize: vertical;"># 示例代码：计算斐波那契数列
 
 def fibonacci(n):
     if n <= 1:
@@ -113,8 +112,12 @@ print(df)
 
 # 计算平均薪资
 print("\n平均薪资：")
-print(df['salary'].mean())
-            </py-script>
+print(df['salary'].mean())</textarea>
+            <div style="margin-top: 10px; display: flex; gap: 10px;">
+                <button style="background: #8B4513; color: white; border: none; padding: 8px 15px; border-radius: 3px; cursor: pointer; font-size: 14px;" onclick="runCode()">运行代码</button>
+                <button style="background: #D2B48C; border: none; padding: 8px 15px; border-radius: 3px; cursor: pointer; font-size: 14px;" onclick="resetCodeEditor(event)">重置代码</button>
+            </div>
+            <div id="codeOutput" style="margin-top: 10px; padding: 10px; background: #f0f0f0; border: 1px solid #D2B48C; border-radius: 5px; font-family: 'Courier New', monospace; white-space: pre-wrap; min-height: 100px;">运行结果将显示在这里...</div>
         </div>
     </div>
 
@@ -497,13 +500,62 @@ print(df['salary'].mean())`;
         
         function resetCodeEditor(event) {
             event.stopPropagation(); // 防止触发折叠/展开
-            const pyScript = document.querySelector('py-script');
-            if (pyScript) {
-                pyScript.textContent = initialCode;
-                // 重新运行代码
-                const pyScriptElement = document.createElement('py-script');
-                pyScriptElement.textContent = initialCode;
-                pyScript.parentNode.replaceChild(pyScriptElement, pyScript);
+            const codeInput = document.getElementById('codeInput');
+            const codeOutput = document.getElementById('codeOutput');
+            if (codeInput && codeOutput) {
+                codeInput.value = initialCode;
+                codeOutput.textContent = '运行结果将显示在这里...';
+            }
+        }
+        
+        function runCode() {
+            const codeInput = document.getElementById('codeInput');
+            const codeOutput = document.getElementById('codeOutput');
+            
+            if (codeInput && codeOutput) {
+                const code = codeInput.value;
+                codeOutput.textContent = '运行中...';
+                
+                // 创建临时的py-script元素来运行代码
+                const pyScript = document.createElement('py-script');
+                pyScript.innerHTML = `
+import sys
+import io
+
+# 捕获标准输出
+old_stdout = sys.stdout
+sys.stdout = io.StringIO()
+
+try:
+    ${code.replace(/\n/g, '\n    ')}
+except Exception as e:
+    print(f"错误: {e}")
+
+# 获取输出并显示
+output = sys.stdout.getvalue()
+sys.stdout = old_stdout
+print(output)
+                `;
+                
+                // 移除旧的py-script元素
+                const oldPyScript = document.querySelector('py-script');
+                if (oldPyScript) {
+                    oldPyScript.remove();
+                }
+                
+                // 添加新的py-script元素
+                document.body.appendChild(pyScript);
+                
+                // 监听输出
+                setTimeout(() => {
+                    const newPyScript = document.querySelector('py-script');
+                    if (newPyScript) {
+                        const outputElement = newPyScript.nextElementSibling;
+                        if (outputElement && outputElement.tagName === 'OUTPUT') {
+                            codeOutput.textContent = outputElement.textContent;
+                        }
+                    }
+                }, 1000);
             }
         }
     </script>
